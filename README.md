@@ -1,6 +1,6 @@
 # e2e-playwright
 
-Learning repo to get started with [Playwright](https://playwright.dev): introduction, getting started, running tests, writing tests, debugging tests, and running tests on CI.
+A repository for beginners starting with [Playwright](https://playwright.dev). It covers introduction, getting started, running tests, writing tests, debugging tests, and running tests on CI.
 
 ## What this project does
 
