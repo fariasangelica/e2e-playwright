@@ -56,12 +56,6 @@ e2e-playwright/
 └── README.md
 ```
 
-## Note about Contoso Traders
-
-The test in `tests/test-1.spec.ts` targets `http://cloudtesting.contosotraders.com/`.  
-That Microsoft demo environment is **no longer available** (DNS does not resolve; the [repository](https://github.com/microsoft/contosotraders-cloudtesting) is archived).  
-Until the URL is replaced with a valid environment, this test will fail on navigation.
-
 ## CI
 
 On every push/PR to `main` or `master`, the workflow `.github/workflows/playwright.yml`:
