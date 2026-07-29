@@ -1,72 +1,72 @@
 # e2e-playwright
 
-Projeto de testes end-to-end com [Playwright](https://playwright.dev), cobrindo Chromium, Firefox e WebKit, com pipeline no GitHub Actions.
+End-to-end testing project with [Playwright](https://playwright.dev), covering Chromium, Firefox, and WebKit, plus a GitHub Actions pipeline.
 
-## Setup inicial
+## Initial setup
 
-Comando usado para criar o projeto:
+Command used to scaffold the project:
 
 ```bash
 npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha
 ```
 
-Inicializa o Playwright com os 3 browsers e gera o workflow do GitHub Actions.
+Initializes Playwright with all 3 browsers and generates the GitHub Actions workflow.
 
-## Pré-requisitos
+## Prerequisites
 
 - [Node.js](https://nodejs.org/) (LTS)
 - npm
 
-## Instalação
+## Installation
 
 ```bash
 npm install
 npx playwright install
 ```
 
-## Como rodar os testes
+## Running tests
 
 ```bash
-# todos os testes (3 browsers)
+# all tests (3 browsers)
 npx playwright test
 
-# um arquivo específico
+# a specific file
 npx playwright test tests/example.spec.ts
 
-# modo UI (debug visual)
+# UI mode (visual debug)
 npx playwright test --ui
 
-# navegador visível
+# headed browser
 npx playwright test --headed
 
-# abrir o relatório HTML
+# open the HTML report
 npx playwright show-report
 ```
 
-## Estrutura
+## Structure
 
 ```
 e2e-playwright/
-├── .github/workflows/playwright.yml  # CI no GitHub Actions
+├── .github/workflows/playwright.yml  # GitHub Actions CI
 ├── tests/
-│   ├── example.spec.ts               # exemplos oficiais (playwright.dev)
-│   └── test-1.spec.ts                # fluxo de compra (Contoso Traders)
+│   ├── example.spec.ts               # official samples (playwright.dev)
+│   └── test-1.spec.ts                # shopping flow (Contoso Traders)
 ├── playwright.config.ts
 ├── package.json
 └── README.md
 ```
 
-## Observação sobre Contoso Traders
+## Note about Contoso Traders
 
-O teste `tests/test-1.spec.ts` aponta para `http://cloudtesting.contosotraders.com/`.  
-Esse ambiente demo da Microsoft **não está mais no ar** (DNS não resolve; o [repositório](https://github.com/microsoft/contosotraders-cloudtesting) está arquivado).  
-Enquanto a URL não for substituída por um ambiente válido, esse teste vai falhar na navegação.
+The test in `tests/test-1.spec.ts` targets `http://cloudtesting.contosotraders.com/`.  
+That Microsoft demo environment is **no longer available** (DNS does not resolve; the [repository](https://github.com/microsoft/contosotraders-cloudtesting) is archived).  
+Until the URL is replaced with a valid environment, this test will fail on navigation.
 
 ## CI
 
-A cada push/PR em `main` ou `master`, o workflow `.github/workflows/playwright.yml`:
+On every push/PR to `main` or `master`, the workflow `.github/workflows/playwright.yml`:
 
-1. instala dependências (`npm ci`)
-2. instala os browsers do Playwright
-3. executa `npx playwright test`
-4. publica o artefato `playwright-report`
+1. installs dependencies (`npm ci`)
+2. installs Playwright browsers
+3. runs `npx playwright test`
+4. uploads the `playwright-report` artifact
