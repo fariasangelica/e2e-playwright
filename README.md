@@ -4,8 +4,6 @@ A repository for beginners starting with [Playwright](https://playwright.dev). I
 
 ## What this project does
 
-Playwright E2E suite on **Chromium**, **Firefox**, and **WebKit**, with GitHub Actions CI.
-
 | File | What it covers |
 | --- | --- |
 | `tests/example.spec.ts` | Smoke tests on [playwright.dev](https://playwright.dev): page title + "Get started" navigation to Installation |
@@ -41,7 +39,7 @@ e2e-playwright/
 
 ### `example.spec.ts` — starter examples
 
-Uses built-in locators with auto-wait/retry and role-based selectors (preferred over CSS/XPath):
+Uses built-in locators with auto-wait/retry and role-based selectors:
 
 1. **has title** — opens playwright.dev and asserts the title contains `Playwright`
 2. **get started link** — clicks `getByRole('link', { name: 'Get started' })` and asserts the `Installation` heading is visible
