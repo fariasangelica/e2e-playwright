@@ -9,15 +9,13 @@ A repository for beginners starting with [Playwright](https://playwright.dev). I
 | `tests/example.spec.ts` | Smoke tests on [playwright.dev](https://playwright.dev): page title + "Get started" navigation to Installation |
 | `tests/test-1.spec.ts` | Contoso Traders shopping flow (recorded with Codegen): search Xbox → open product → add to bag → assert cart |
 
-Setup command used:
-
-```bash
-npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha
-```
-
 ## Setup
 
 ```bash
+# scaffold (used to create this project)
+npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha
+
+# install dependencies and browsers
 npm install
 npx playwright install
 ```
